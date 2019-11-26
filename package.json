@@ -1,0 +1,22 @@
+{
+    "name": "backendnodejs",
+    "version": "1.0.0",
+    "description": "api para la consulta de productos",
+    "main": "index.js",
+    "scripts": {
+        "dev": "nodemon src/index.js"
+    },
+    "keywords": [
+        "api"
+    ],
+    "author": "GedGonz",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "mongoose": "^5.7.12"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.1"
+    }
+}
