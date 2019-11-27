@@ -1,5 +1,5 @@
 # BackendNodeJS
-Api para para la el CRUD de tabla producto en base de datos en mongodb
+Api para para la el CRUD de tabla producto en mongodb
 
 
 ## Metodos del API
