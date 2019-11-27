@@ -4,6 +4,7 @@
     "description": "api para la consulta de productos",
     "main": "index.js",
     "scripts": {
+        "start": "node src/inde.js",
         "dev": "nodemon src/index.js"
     },
     "keywords": [
