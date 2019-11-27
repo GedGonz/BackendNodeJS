@@ -22,4 +22,6 @@ URL: https://marketfunkopop.herokuapp.com
 ```
 
 Este proyecto trabaja en conjunto con el proyecto FrontEnd en Angular 8
-este se encuentra en: https://github.com/GedGonz/FrontEndAngular
+este se encuentra en: 
+
+https://github.com/GedGonz/FrontEndAngular
