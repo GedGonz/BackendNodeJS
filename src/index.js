@@ -1,17 +1,28 @@
 var express = require('express');
 var cors = require('cors');
-
+var path = require('path');
+var multer = require('multer');
 var app = express();
 
 app.set('port', process.env.PORT || 3000)
 
-require('./database');
+require('./database/database');
 
 app.use(cors());
 
-app.use(express.json({ limit: '50mb' }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.use('/api', require('./routes/index'));
+var storage = multer.diskStorage({
+    destination: path.join(__dirname, 'public/uploads'),
+    filename: (req, file, cb) => {
+        cb(null, new Date().getTime() + path.extname(file.originalname));
+    }
+});
+
+app.use(multer({ storage }).single('imagen'));
+
+app.use('/api', require('./routes/product.router'));
 
 app.listen(3000, function(err) {
 
