@@ -13,7 +13,7 @@ module.exports = {
     async getallProduct(req, res) {
 
         var _producto = await producto.find();
-
+        console.log(_producto);
         if (!_producto) {
             return res.status(401).send("No existe productos!");
         }
@@ -41,7 +41,6 @@ module.exports = {
         var result = await cloudinary.v2.uploader.upload(req.file.path);
 
         var nuevoProducto = new producto({ _id, nombre, descripcion, precio, categoria, imagen: result.secure_url });
-
 
         var prodcut = await nuevoProducto.save();
 
