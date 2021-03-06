@@ -64,20 +64,7 @@ module.exports = {
     },
     async updateProduct(req, res) {
 
-        var { _id, nombre, descripcion, precio, categoria, imagen } = req.body;
-
-        var _producto = await producto.findOne({ _id });
-        if (!_producto) {
-
-            return res.status(401).send("Producto no existe!");
-        }
-        _producto.nombre = nombre;
-        _producto.descripcion = descripcion;
-        _producto.precio = precio;
-        _producto.categoria = categoria;
-        _producto.imagen = imagen;
-
-        await producto.update(_producto);
+        var _producto = await producto.findByIdAndUpdate(req.params.id, req.body);
 
         return res.status(200).json(_producto);
 
@@ -85,7 +72,6 @@ module.exports = {
     async deletProduct(req, res) {
 
         var _id = req.params.id;
-
 
         var _producto = await producto.findOne({ _id });
         if (!_producto) {
