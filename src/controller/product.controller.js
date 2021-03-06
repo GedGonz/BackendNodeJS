@@ -49,6 +49,7 @@ module.exports = {
         console.log(dir);
         fs.rmdirSync(dir, { recursive: true });
         return res.status(200).json(prodcut);
+
     },
     async updateProduct(req, res) {
 
