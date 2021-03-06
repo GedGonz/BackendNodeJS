@@ -1,6 +1,8 @@
 var producto = require('../models/producto');
 var config = require('../config/configapp');
 var cloudinary = require('cloudinary');
+var path = require('path');
+var fs = require('fs');
 
 cloudinary.config({
     cloud_name: config.cloudinaryNAME,
@@ -43,7 +45,9 @@ module.exports = {
         var nuevoProducto = new producto({ _id, nombre, descripcion, precio, categoria, imagen: result.secure_url });
 
         var prodcut = await nuevoProducto.save();
-
+        var dir = path.join(__dirname, '../public/uploads');
+        console.log(dir);
+        fs.rmdirSync(dir, { recursive: true });
         return res.status(200).json(prodcut);
     },
     async updateProduct(req, res) {
