@@ -9,5 +9,4 @@ mongoose.connect('mongodb+srv://ged:Ged123@cluster0.qd2xq.mongodb.net/productoFP
     useNewUrlParser: true,
     useFindAndModify: false,
     useUnifiedTopology: true
-
 });
