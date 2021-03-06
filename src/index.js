@@ -24,7 +24,7 @@ app.use(multer({ storage }).single('imagen'));
 
 app.use('/api', require('./routes/product.router'));
 
-app.listen(3000, function(err) {
+app.listen(app.get('port'), function(err) {
 
     if (err) return console.log('Hubo un error'), process.exit(1);
 
