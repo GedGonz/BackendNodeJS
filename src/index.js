@@ -14,12 +14,16 @@ const corsOpts = {
     methods: [
         'GET',
         'POST',
+        'PUT',
+        'DELETE'
     ],
 
     allowedHeaders: [
         'Content-Type',
     ],
 };
+
+app.use(cors(corsOpts));
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
