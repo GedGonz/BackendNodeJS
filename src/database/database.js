@@ -8,6 +8,6 @@ mongoose.connect('mongodb+srv://ged:Ged123@cluster0.qd2xq.mongodb.net/productoFP
     useCreateIndex: true,
     useNewUrlParser: true,
     useFindAndModify: false,
-    useUnifiedTopology: false
+    useUnifiedTopology: true
 
 });
