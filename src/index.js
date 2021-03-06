@@ -4,7 +4,7 @@ var path = require('path');
 var multer = require('multer');
 var app = express();
 
-app.set('port', process.env.PORT || 3000)
+app.set('port', process.env.PORT || 5000)
 
 require('./database/database');
 
