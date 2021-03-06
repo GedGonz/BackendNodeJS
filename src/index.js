@@ -2,6 +2,7 @@ var express = require('express');
 var cors = require('cors');
 var path = require('path');
 var multer = require('multer');
+const { Console } = require('console');
 var app = express();
 
 app.set('port', process.env.PORT || 5000)
@@ -37,6 +38,7 @@ app.use(express.urlencoded({ extended: true }));
 var storage = multer.diskStorage({
     destination: path.join(__dirname, 'public/uploads'),
     filename: (req, file, cb) => {
+        console.log(path.join(__dirname, 'public/uploads'));
         cb(null, new Date().getTime() + path.extname(file.originalname));
     }
 });

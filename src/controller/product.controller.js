@@ -10,6 +10,17 @@ cloudinary.config({
     api_secret: config.cloudinaryAPI_SECRET
 });
 
+async function deleteFile() {
+    var dir = path.join(__dirname, '../public/uploads');
+
+    fs.rmdirSync(dir, { recursive: true });
+
+    fs.mkdir((dir), (error) => {
+        if (error)
+            console.log(error);
+    });
+}
+
 module.exports = {
 
     async getallProduct(req, res) {
@@ -45,9 +56,9 @@ module.exports = {
         var nuevoProducto = new producto({ _id, nombre, descripcion, precio, categoria, imagen: result.secure_url });
 
         var prodcut = await nuevoProducto.save();
-        var dir = path.join(__dirname, '../public/uploads');
-        console.log(dir);
-        fs.rmdirSync(dir, { recursive: true });
+
+        await deleteFile();
+
         return res.status(200).json(prodcut);
 
     },
