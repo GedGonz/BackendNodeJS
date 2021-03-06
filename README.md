@@ -8,7 +8,7 @@ Una vez actualizada la base de datos, puede poner en marcha la aplicación.
 
 Podra acceder a la Api con las siguientes rutas:
 
-URL: https://marketfunkopop.herokuapp.com
+URL: https://funkopopapi.herokuapp.com
 
 ```cs
 
