@@ -8,7 +8,8 @@ app.set('port', process.env.PORT || 5000)
 
 require('./database/database');
 
-app.options('*', cors())
+app.use(cors());
+app.options('*', cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
